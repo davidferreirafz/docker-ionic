@@ -37,6 +37,12 @@ RUN mkdir -p ~/.android/ && touch ~/.android/repositories.cfg && \
 # Install ionic
 RUN npm install -g ionic@3.20 node-gyp node-sass@4.9 cordova @angular/cli --unsafe-perm=true --allow-root
 
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk -O /tmp/glibc-2.30-r0.apk && \
+    apk add --allow-untrusted /tmp/glibc-2.30-r0.apk && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-bin-2.30-r0.apk -O /tmp/glibc-bin-2.30-r0.apk && \
+    apk add --allow-untrusted /tmp/glibc-bin-2.30-r0.apk && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-i18n-2.30-r0.apk -O /tmp/glibc-i18n-2.30-r0.apk && \
+    apk add --allow-untrusted /tmp/glibc-i18n-2.30-r0.apk
 
 # Create workspace
 RUN mkdir -p /opt/app 
