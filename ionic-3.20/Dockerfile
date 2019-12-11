@@ -31,7 +31,8 @@ RUN mkdir -p ~/.android/ && touch ~/.android/repositories.cfg && \
     ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools" "extras;android;m2repository" "extras;google;m2repository" && \
     ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;29.0.2" "platforms;android-28" && \
     ${ANDROID_HOME}/tools/bin/sdkmanager "ndk;17.2.4988734" && \
-    ${ANDROID_HOME}/tools/bin/sdkmanager "--update"
+    ${ANDROID_HOME}/tools/bin/sdkmanager "--update" && \
+    chmod 777 -R $ANDROID_HOME
 
 # Install ionic
 RUN npm install -g ionic@3.20 node-gyp node-sass@4.9 cordova @angular/cli --unsafe-perm=true --allow-root
