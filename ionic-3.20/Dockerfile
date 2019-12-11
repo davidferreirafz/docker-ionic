@@ -15,7 +15,8 @@ ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platfor
 
 # Install JDK
 RUN apk update && \
-    apk add openjdk8 
+    apk add openjdk8 && \
+    ln -s /usr/lib/jvm/java-1.8-openjdk/bin/javac /usr/bin/javac
 
 # Download and extract Android Tools
 RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-${SDK_TOOLS_NUMBER}.zip -O /tmp/tools.zip && \
@@ -32,7 +33,7 @@ RUN mkdir -p ~/.android/ && touch ~/.android/repositories.cfg && \
     ${ANDROID_HOME}/tools/bin/sdkmanager "--update"
 
 # Install ionic
-RUN npm install -g ionic@3.20 node-gyp node-sass cordova @angular/cli --unsafe-perm=true --allow-root
+RUN npm install -g ionic@3.20 node-gyp node-sass@4.9 cordova @angular/cli --unsafe-perm=true --allow-root
 
 
 # Create workspace
