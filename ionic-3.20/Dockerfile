@@ -16,6 +16,7 @@ ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platfor
 # Install JDK
 RUN apk update && \
     apk add openjdk8 && \
+    apk add gradle && \
     ln -s /usr/lib/jvm/java-1.8-openjdk/bin/javac /usr/bin/javac
 
 # Download and extract Android Tools
