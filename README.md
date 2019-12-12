@@ -20,6 +20,13 @@ cd project-ionic3
 npm i
 ionic cordova build android
 ```
+Result:
+```
+BUILD SUCCESSFUL in 1m 49s
+42 actionable tasks: 42 executed
+Built the following apk(s): 
+	/opt/app/project-ionic/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+```
 
 ----
 
@@ -40,6 +47,14 @@ npm i
 ionic cordova build android
 ```
 
+Result:
+```
+BUILD SUCCESSFUL in 1m 49s
+42 actionable tasks: 42 executed
+Built the following apk(s): 
+	/opt/app/project-ionic/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+```
+
 PT-BR
 ----
 Ambiente de construção para aplicativos android na plataforma Ionic  3 e 4
@@ -57,6 +72,13 @@ cd project-ionic3
 npm i
 ionic cordova build android
 ```
+Resultado:
+```
+BUILD SUCCESSFUL in 1m 49s
+42 actionable tasks: 42 executed
+Built the following apk(s): 
+	/opt/app/project-ionic/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+```
 
 ----
 
@@ -72,4 +94,12 @@ ionic start project-ionic tabs  --no-link --no-interactive
 cd project-ionic
 npm i
 ionic cordova build android
+```
+
+Resultado:
+```
+BUILD SUCCESSFUL in 1m 49s
+42 actionable tasks: 42 executed
+Built the following apk(s): 
+	/opt/app/project-ionic/platforms/android/app/build/outputs/apk/debug/app-debug.apk
 ```
