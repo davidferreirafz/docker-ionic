@@ -14,7 +14,7 @@ ENV SDK_TOOLS_NUMBER "4333796"
 ENV ANDROID_HOME "/opt/android"
 ENV ANDROID_SDK_ROOT="/opt/android"
 ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-ENV CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="https://downloads.gradle-dn.com/distributions/gradle-4.10.3-all.zip"
+ENV CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="file:///tmp/gradle-4.10.3-all.zip" 
  
 
 RUN mkdir -p ${ANDROID_HOME}
@@ -30,6 +30,9 @@ RUN apk update && \
 RUN wget -q https://dl.google.com/android/repository/sdk-tools-linux-${SDK_TOOLS_NUMBER}.zip -O /tmp/tools.zip && \
     unzip -qq /tmp/tools.zip -d ${ANDROID_HOME} && \
     rm -v /tmp/tools.zip
+
+#Download gradle
+RUN wget -q https://downloads.gradle-dn.com/distributions/gradle-4.10.3-all.zip -O /tmp/gradle-4.10.3-all.zip
 
 
 # Install SDK Packages
