@@ -23,6 +23,7 @@ RUN mkdir -p ${ANDROID_HOME}
 RUN apk update && \
     apk add openjdk8 && \
     apk add gradle && \  
+    apk add git && \    
     ln -s /usr/lib/jvm/java-1.8-openjdk/bin/javac /usr/bin/javac
 
 
