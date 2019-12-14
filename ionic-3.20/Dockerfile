@@ -9,8 +9,8 @@ LABEL ambiente="Build, dev, desenvolvimento, devel"
 LABEL maintainer="davidferreira.fz@gmail.com"
 
 ENV SDK_TOOLS_NUMBER "4333796"
-ENV BUILD_TOOLS_VERSION = "29.0.2"
-ENV ANDROID_HOME "/opt/android"
+ENV BUILD_TOOLS_VERSION="29.0.2"
+ENV ANDROID_HOME="/opt/android"
 ENV ANDROID_SDK_ROOT="/opt/android"
 ENV ANDROID_NDK_HOME="/opt/android/ndk/17.2.4988734/"
 ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/$BUILD_TOOLS_VERSION/
