@@ -13,6 +13,7 @@ LABEL maintainer="davidferreira.fz@gmail.com"
 ENV SDK_TOOLS_NUMBER "4333796"
 ENV ANDROID_HOME "/opt/android"
 ENV ANDROID_SDK_ROOT="/opt/android"
+ENV ANDROID_NDK_HOME="/opt/android/ndk/17.2.4988734/"
 ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 ENV CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="file:///tmp/gradle-4.10.3-all.zip" 
  
