@@ -9,10 +9,11 @@ LABEL ambiente="Build, dev, desenvolvimento, devel"
 LABEL maintainer="davidferreira.fz@gmail.com"
 
 ENV SDK_TOOLS_NUMBER "4333796"
+ENV BUILD_TOOLS_VERSION = "29.0.2"
 ENV ANDROID_HOME "/opt/android"
 ENV ANDROID_SDK_ROOT="/opt/android"
 ENV ANDROID_NDK_HOME="/opt/android/ndk/17.2.4988734/"
-ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/$BUILD_TOOLS_VERSION/
 ENV CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="file:///tmp/gradle-4.10.3-all.zip"
 
 
@@ -41,7 +42,7 @@ RUN wget -q https://downloads.gradle-dn.com/distributions/gradle-4.10.3-all.zip 
 RUN mkdir -p ~/.android/ && touch ~/.android/repositories.cfg && \
     yes | ${ANDROID_HOME}/tools/bin/sdkmanager "--licenses" && \
     ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools" "extras;android;m2repository" "extras;google;m2repository"  \
-    "build-tools;29.0.2" "platforms;android-28" "ndk;17.2.4988734" && \
+    "build-tools;$BUILD_TOOLS_VERSION" "platforms;android-28" "ndk;17.2.4988734" && \
     ${ANDROID_HOME}/tools/bin/sdkmanager "--update" && \
     chmod 777 -R $ANDROID_HOME
 
